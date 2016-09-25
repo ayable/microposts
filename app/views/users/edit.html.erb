@@ -22,7 +22,13 @@
     
      <%= f.label :email, 'メールアドレス' %>
      <%= f.text_field :email , class: 'form-control'%>
-    
+
+     <%= f.label :password %>
+     <%= f.password_field :password, class: 'form-control' %>
+     
+     <%= f.label :password_confirmation, "Confirmation" %>
+     <%= f.password_field :password_confirmation, class: 'form-control' %>
+
      <%= f.label :age, '年齢' %>
      <%= f.text_field :age , class: 'form-control'%>
     
