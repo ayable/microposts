@@ -2,3 +2,18 @@
   <%= gravatar_for @user %>
   <%= @user.name %>
 </h1>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Profile
+  </div>
+  
+  <!--メッセージボードの繰り返しなしでプロフィール入力画面作る-->
+  <ul>
+    <li>名前: <%= @user.name%></li>
+    <li>メールアドレス: <%= @user.email%></li>
+    <li>年齢：<%= @user.age%>
+    <li>地域: <%= @user.address%></li>
+  </ul>
+
+</div>

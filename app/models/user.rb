@@ -5,7 +5,11 @@ class User < ActiveRecord::Base
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
-    
+  # 年齢は必須入力かつ0以上
+  validates :age , numericality: { only_integer: true, greater_than_or_equal_to: 0 }, on: :update
+  # 内容は必須入力かつ2文字以上30文字以下
+  validates :address , length: { minimum: 2, maximum: 30 }, on: :update
+
   has_secure_password
   has_many :microposts
 end
