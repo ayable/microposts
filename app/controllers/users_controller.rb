@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update]
-  before_action :correct_user, only: [:edit, :update]
+  before_action :correct_user, only: [:edit, :updatea]
 
   def show
     @user = User.find(params[:id])
@@ -35,6 +35,12 @@ class UsersController < ApplicationController
       flash.now[:alert] = "メッセージの保存に失敗しました。"
       render 'edit'
     end
+  end
+  
+  def followings
+  end
+
+  def followers
   end
 
   private

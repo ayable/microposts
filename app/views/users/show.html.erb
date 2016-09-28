@@ -6,7 +6,15 @@
         <%= @user.name %>
       </h1>
     </section>
+    <br>
+    <br>
+    <ol>■■プロフィール■■</ol>
+    <ol>年齢：<%= @user.age %></ol>
+    <ol>居住地：<%= @user.address %></ol>
+    <ol><%= link_to"Followings",followings_user_path(@user)%>: <%= @user.following_users.count %></ol>
+    <ol><%= link_to"Followers",followers_user_path(@user)%>: <%= @user.follower_users.count %></ol>
   </aside>
+  
   <div class="col-md-8">
     <%= render 'follow_form' if logged_in? %>
     <% if @user.microposts.any? %>
@@ -19,5 +27,6 @@
         <%= render @microposts %>
       </ol>
     <% end %>
+
   </div>
 </div>

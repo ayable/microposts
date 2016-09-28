@@ -1,0 +1,21 @@
+
+<h1>Following (<%= current_user.following_users.count %>)</h1>
+  
+<% current_user.following_users.each do |user| %>
+  <ol class = "follwings">
+    <h1>
+      <%= gravatar_for user %>
+    </h1>
+    <h3>
+      <%= user.name %>
+    </h3>
+      
+    <%= link_to"Followings",followings_user_path(user)%>
+    <%= link_to"Followers",followers_user_path(user)%>
+  </ol>
+  <br>
+  <hr>
+  <% end %>
+  
+  
+  
