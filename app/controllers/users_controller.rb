@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_profile, only: [:show, :edit, :update]
+  before_action :set_profile, only: [:show, :edit, :update, :followings, :followers]
   before_action :correct_user, only: [:edit, :updatea]
 
   def show
@@ -38,9 +38,15 @@ class UsersController < ApplicationController
   end
   
   def followings
+    @title = 'followings'
+    @users = @user.following_users
+    render 'show_follow'
   end
-
+  
   def followers
+    @title = 'followers'
+    @users = @user.follower_users
+    render 'show_follow'
   end
 
   private

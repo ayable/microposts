@@ -7,10 +7,7 @@ Rails.application.routes.draw do
 
   resources :users do
     member do
-      get :followings
-    end
-   member do
-      get :followers
+      get :followings, :followers
     end
   end
   resources :microposts
