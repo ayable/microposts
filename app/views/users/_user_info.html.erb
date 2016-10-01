@@ -1,7 +1,7 @@
 <section class="user_info">
   <h1>
     <%= gravatar_for @user %>
-    <%= @user.name %>
+    <%= link_to @user.name %>
   </h1>
 </section>
 <br>
@@ -9,6 +9,6 @@
 <ol>■■プロフィール■■</ol>
 <ol>年齢：<%= @user.age %></ol>
 <ol>居住地：<%= @user.address %></ol>
-<ol><%= link_to"User", @user %></ol>
+<!--<ol><%#= link_to"User", @user %></ol>-->
 <ol><%= link_to"Followings",followings_user_path(@user)%>: <%= @user.following_users.count %></ol>
 <ol><%= link_to"Followers",followers_user_path(@user)%>: <%= @user.follower_users.count %></ol>
